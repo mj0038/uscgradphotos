@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/portfolio.css">
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="portfolio-intro">
+        <h1>Discover the moments I've captured through my lens</h1>
+    </section>
+
+    <div class="content-container">
+        <div class="portfolio-slideshow">
+            <div class="portfolio-slide fade">
+                <img src="photos/portfolio/portfolio1.JPG" alt="Photo 1">
+            </div>
+            <div class="portfolio-slide fade">
+                <img src="photos/portfolio/portfolio2.jpeg" alt="Photo 2">
+            </div>
+            <div class="portfolio-slide fade">
+                <img src="photos/portfolio/portfolio3.jpeg" alt="Photo 3">
+            </div>
+        </div>
+        <div class="additional-photos">
+            <div class="photo-container">
+                <img src="photos/portfolio/portfolio1.JPG" alt="Additional Photo 1" class="additional-photo">
+                <img src="photos/portfolio/portfolio2.jpeg" alt="Additional Photo 2" class="additional-photo">
+                <!-- Add more photos as needed -->
+            </div>
+            <button class="prev">&#10094;</button>
+            <button class="next">&#10095;</button>
+        </div>
+        <div class="category-section">
+            <a href="landscape.html" class="category">
+                <img src="photos/landscape/landscape_cover.jpeg" alt="Landscape Cover" class="cover-photo">
+                <div class="caption">Landscape</div>
+            </a>
+            <a href="usc_graduation.html" class="category">
+                <img src="photos/usc_grad/usc_grad_cover.jpeg" alt="USC Graduation Cover" class="cover-photo">
+                <div class="caption">USC Graduation</div>
+            </a> 
+            <a href="portrait.html" class="category">
+                <img src="photos/potrait/potrait_cover.jpeg" alt="Portrait Cover" class="cover-photo">
+                <div class="caption">Portrait</div>
+            </a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mridul Jhawar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal Content Wrapper -->
+        <div class="modal-content-wrapper" onclick="event.stopPropagation();">
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+            <!-- Modal Caption (Image Title) -->
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <script src="javascript_files/portfolio.js"></script>
+</body>
+</html>

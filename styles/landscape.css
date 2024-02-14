@@ -1,0 +1,75 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    padding-top: 20px; /* Space for fixed navbar */
+    font-family: Arial, sans-serif;
+    background-color: #333;
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: darkred;
+    color: white;
+    padding: 20px; /* Adjusted padding for smaller fixed value */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between; /* This spreads the items evenly */
+}
+
+.navbar li {
+    margin-right: 20px; /* Adjust the spacing between the list items */
+}
+
+.navbar li:last-child {
+    margin-right: 0; /* Ensures that the last item doesn't have extra space on the right */
+}
+
+.navbar a {
+    color: rgb(221, 162, 12);
+    text-decoration: none;
+    padding: 5px 5px;
+}
+
+/* Footer styling */
+.footer {
+    background-color: darkred;
+    color: rgb(221, 162, 12);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    flex-shrink: 0;
+    margin: 0;
+    border: 0;
+}
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px; /* Adjust padding for mobile */
+    }
+}
+
+/* Fading animation */
+@keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+}
+
+/* Responsive settings for the slideshow might be needed depending on your layout */
+@media screen and (max-width: 768px) {
+    .prev, .next {font-size: 11px;}
+}

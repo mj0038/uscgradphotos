@@ -1,0 +1,81 @@
+/* Content styling */
+.content-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.portfolio-intro, .portfolio-slideshow, .additional-photos, .category-section {
+    margin: 10px 0;
+}
+
+.portfolio-intro {
+    text-align: center;
+    padding: 20px 20px;
+    background: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(10px);
+}
+
+.portfolio-intro h1, .portfolio-intro p {
+    margin-bottom: 0.5em;
+    color: #aaa;
+}
+
+/* Slideshow and additional photos */
+.portfolio-slideshow, .additional-photos, .photo-container, .portfolio-slide, .additional-photo {
+    position: relative;
+    max-width: 1200px;
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+
+.portfolio-slide img, .additional-photo {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    cursor: pointer;
+}
+
+/* Category section */
+.category-section, .category, .cover-photo, .caption {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.category img {
+    max-width: 300px;
+    margin: 0 auto;
+}
+
+.caption {
+    font-size: 1.2em;
+    margin-top: 10px;
+    color: #333;
+}
+
+/* Modal styling */
+.modal, .modal-content, .close, .modal-content-wrapper {
+    /* Modal styles remain unchanged */
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+    .category {
+        flex-basis: calc(50% - 20px); /* Adjust for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    .portfolio-slide img, .additional-photo {
+        object-fit: scale-down;
+    }
+    .category {
+        flex-basis: calc(100% - 20px); /* Adjust for mobile phones */
+    }
+    .content-container, .navbar {
+        padding: 0 10px;
+    }
+}

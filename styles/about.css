@@ -1,0 +1,177 @@
+/* Reset default browser styles */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    padding-top: 10px; /* Space for fixed navbar */
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -100; /* Ensure the video stays in the background */
+}
+
+/* Navigation bar styling */
+.navbar {
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    background-color: darkred;
+    color: white;
+    padding: 20px; /* Adjusted padding for smaller fixed value */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between; /* This spreads the items evenly */
+}
+
+.navbar li {
+    margin-right: 20px; /* Adjust the spacing between the list items */
+}
+
+.navbar li:last-child {
+    margin-right: 0; /* Ensures that the last item doesn't have extra space on the right */
+}
+
+.navbar a {
+    color: rgb(221, 162, 12);
+    text-decoration: none;
+    padding: 5px 5px;
+}
+/* Content container styling */
+.content-container {
+    margin-top: 80px; /* Height of navbar */
+    padding-top: 0; /* No additional padding needed */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+/* About section styling */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers the text */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.combined-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center; /* Aligns text-content and slideshow-container vertically */
+    flex-wrap: wrap;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background:rgb(247, 203, 91);
+    padding: 20px;
+    border-radius: 15px;
+}
+
+.text-content {
+    flex: 3; /* Takes up more space than the image */
+    text-align: center; /* Center text horizontally */
+}
+
+.slideshow-container {
+    flex: 2; /* Takes up less space than text-content */
+    display: flex; /* Align items in a flex container */
+    justify-content: center; /* Center slideshow images horizontally */
+    align-items: center; /* Center slideshow images vertically */
+    position: relative; /* Position relative to allow absolute positioning inside */
+}
+
+.slide {
+    max-width: 100%; /* Set maximum width */
+    height: auto; /* Maintain aspect ratio */
+    display: none; /* Hide all slides by default */
+    border-radius: 15px;
+
+}
+
+/* Class to be added by JavaScript to make the slide visible */
+.active-slide {
+    display: block; /* Only the active slide is displayed */
+}
+
+/* Footer styling */
+.footer {
+    background-color: darkred;
+    color: rgb(221, 162, 12);
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    z-index: 10;
+    flex-shrink: 0;
+    margin: 0;
+    border: 0;
+}
+.photos-slideshow {
+    width: 100%;
+    max-height: auto;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-top: 20px; /* Space from the above section */
+}
+
+.photo-slides {
+    display: none; /* Hide all slides by default */
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.photo-slides img {
+    width: 100%; /* Make image full width of the slide */
+    display:block;
+    height: auto; /* Maintain aspect ratio */
+}
+/* Media Queries */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px 2%; /* Reduce padding on smaller screens */
+    }
+    
+    .navbar ul {
+        justify-content: center; /* Keep the navbar items in one row on smaller screens */
+    }
+    
+    .navbar a {
+        padding: 15px 10px; /* Adjust padding for better tap targets on mobile */
+    }
+    
+    .content-container {
+        margin-top: 60px; /* Adjust top margin to account for smaller navbar */
+    }
+    
+    .combined-content {
+        flex-direction: column; /* Stack text and images on smaller screens */
+        align-items: center; /* Center align the stacked items */
+    }
+    
+    .text-content, .slideshow-container {
+        flex-basis: 100%; /* Allow each to take full width */
+    }
+}
+    

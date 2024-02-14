@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Landscape Portfolio</title>
+    <link rel="stylesheet" href="styles/landscape.css">
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="content-container">
+        <div class="landscap-slideshow">
+            <div class="landscape-slide fade">
+                <img src="photos/landscape/landscape1.JPG" alt="Photo 1">
+            </div>
+            <div class="landscape-slide fade">
+                <img src="photos/landscape/landscape2.jpg" alt="Photo 2">
+            </div>
+            <div class="landscape-slide fade">
+                <img src="photos/landscape/landscape3.jpg" alt="Photo 3">
+            </div>
+
+        </div>
+
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2024 Mridul Jhawar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <!-- Modal Content Wrapper -->
+        <div class="modal-content-wrapper" onclick="event.stopPropagation();">
+            <!-- The Close Button -->
+            <span class="close">&times;</span>
+            <!-- Modal Content (The Image) -->
+            <img class="modal-content" id="img01">
+            <!-- Modal Caption (Image Title) -->
+            <div id="caption"></div>
+        </div>
+    </div>
+
+    <script src="javascript_files/landscape.js"></script>
+</body>
+</html>

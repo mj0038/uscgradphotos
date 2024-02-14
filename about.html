@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles/about.css">
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <video autoplay muted loop id="background-video">
+        <source src="photos/stars.mov" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="content-container">
+        <div class="about-section">
+            <div class="combined-content">
+                <div class="text-content">
+                    <h1>Preserving memories that will last for a lifetime</h1>
+                    <p>I am a USC alum, I graduated in December 2023 and will be walking this May with you all!</p>
+                    <p>I studied Data Science from the Viterbi School of Engineering.</p>
+                    <p>My hobby is photography and I have done it for a few friends in May 2023.</p>
+                    <p>Join me in my efforts to capture and preserve the special moments of your graduation day.</p>
+                </div>
+                <div class="slideshow-container">
+                    <!-- Slideshow images -->
+                    <img src="photos/aboutme/aboutme1.jpeg" alt="About Me 1" class="slide">
+                    <img src="photos/aboutme/aboutme2.jpeg" alt="About Me 2" class="slide">
+                    <img src="photos/aboutme/aboutme3.jpeg" alt="About Me 3" class="slide">
+                    <img src="photos/aboutme/aboutme4.jpeg" alt="About Me 4" class="slide">
+                </div>
+                <div id="dynamicShape" class="shape"></div> 
+            </div>
+        </div>
+    </div>
+    <div class ='photos-slideshow'>
+        <div class="photo-slides fade">
+            <img src="photos/aboutme/aboutme5.jpeg" alt="Photo 1">
+        </div>
+        <div class="photo-slides fade">
+            <img src="photos/aboutme/aboutme6.jpeg" alt="Photo 2">
+        </div>
+        <div class="photo-slides fade">
+            <img src="photos/aboutme/aboutme7.jpeg" alt="Photo 3">
+        </div>
+
+    </div>
+
+
+    <footer class="footer">
+        <p>&copy; 2024 Mridul Jhawar. All Rights Reserved.</p>
+    </footer>
+
+    <script src="javascript_files/aboutme.js"></script>
+</body>
+</html>
