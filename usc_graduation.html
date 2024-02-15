@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles/usc_grad.css">
+    <link rel="stylesheet" href="styles/general.css">
+</head>
+<body>
+    <header class="navbar">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About Me</a></li>
+                <li><a href="portfolio.html" class="active">Portfolio</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="portfolio-intro">
+        <h1>Discover the moments I've captured through my lens</h1>
+    </section>
+
+    <div class="content-container">
+        <div class="portfolio-slideshow">
+            <div class="portfolio-slide fade">
+                <img src="photos/usc_grad/usc_grad1.jpeg" alt="Photo 1">
+            </div>
+            <div class="portfolio-slide fade">
+                <img src="photos/usc_grad/usc_grad2.jpeg" alt="Photo 2">
+            </div>
+            <div class="portfolio-slide fade">
+                <img src="photos/usc_grad/usc_grad3.jpeg" alt="Photo 3">
+            </div>
+            <div class="portfolio-slide fade">
+                <img src="photos/usc_grad/usc_grad4.jpeg" alt="Photo 4">
+            </div>
+            <div class="portfolio-slide fade">
+                <img src="photos/usc_grad/usc_grad5.jpeg" alt="Photo 5">
+            </div>
+        </div>
+
+        <!-- New Horizontal Box with Two Vertical Boxes -->
+        <div class="horizontal-container">
+            <!-- Vertical Box 1 -->
+            <div class="vertical-box">
+                <div class="vertical-slide fade">
+                    <img src="photos/usc_grad/usc_grad12.jpeg" alt="Vertical Photo 1-1">
+                </div>
+                <div class="vertical-slide fade">
+                    <img src="photos/usc_grad/usc_grad13.jpeg" alt="Vertical Photo 1-2">
+                </div>
+             <!-- Additional vertical-slide divs for Box 1 -->
+            </div>
+
+            <!-- Vertical Box 2 -->
+            <div class="vertical-box">
+                <div class="vertical-slide fade">
+                    <img src="photos/usc_grad/usc_grad14.jpeg" alt="Vertical Photo 1-1">
+                </div>
+                <div class="vertical-slide fade">
+                    <img src="photos/usc_grad/usc_grad15.jpeg" alt="Vertical Photo 1-2">
+                </div>
+            </div>
+        </div>
+        <div class="additional-photos">
+            <div class="photo-container">
+                <div class="additional-photo fade">
+                    <img src="photos/usc_grad/usc_grad6.jpeg" alt="Additional Photo 1">
+                </div>
+                <div class="additional-photo fade">
+                    <img src="photos/usc_grad/usc_grad7.jpeg" alt="Additional Photo 2">
+                </div>
+                <div class="additional-photo fade">
+                    <img src="photos/usc_grad/usc_grad8.jpeg" alt="Additional Photo 3">
+                </div>
+                <div class="additional-photo fade">
+                    <img src="photos/usc_grad/usc_grad9.jpeg" alt="Additional Photo 4">
+                </div>
+                <div class="additional-photo fade">
+                    <img src="photos/usc_grad/usc_grad10.jpeg" alt="Additional Photo 5">
+                </div>
+                <div class="additional-photo fade">
+                    <img src="photos/usc_grad/usc_grad11.jpeg" alt="Additional Photo 5">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pricing-signup-section">
+        <h2>Let's Capture Authentic Moments Together</h2>
+        <p>As a proud USC alum and passionate photographer, I believe in connecting with you before the lens cap comes off. It's not just about pictures; it's about capturing the real, unguarded moments that tell your story.</p>
+        <p>Explore my photography packages, each designed with care to suit different occasions. From the first meet-up to the final shot, I'm here to make your memories last a lifetime in a way that feels genuine and true to you.</p>
+        <p>Pick the package that speaks to you, and let's create something beautiful together.</p>
+    </div>
+        <!-- pricing table -->
+        <div class="pricing-table">
+            <div class="pricing-package">
+                <h3>Basic Package</h3>
+                <p>$75 - 1 hour session</p>
+                <ul>
+                    <li>50 high-resolution photos with editing</li>
+                    <li>Online gallery (Google Drive for all photos)</li>
+                    <li>Groups welcome - prices will increase if more than 4</li>
+                </ul>
+            </div>
+            <div class="pricing-package">
+                <h3>Premium Package</h3>
+                <p>$130 - 2 hours session</p>
+                <ul>
+                    <li>100 high-resolution photos with editing</li>
+                    <li>Online gallery (Google Drive for all photos)</li>
+                    <li>Groups welcome - prices will increase if more than 4</li>
+                </ul>
+            </div>
+            <div class="pricing-package">
+                <h3>Group Package (>4)</h3>
+                <p>$100 - 1 hour session</p>
+                <ul>
+                    <li>100 high-resolution photos with editing</li>
+                    <li>Online gallery (Google Drive for all photos)</li>
+                    <li>Groups welcome - prices will increase if more than 4</li>
+                </ul>
+            </div>
+        </div>
+
+        </div>
+    
+        
+        <p class="connect-call-to-action">Interested? Let's connect!</p>
+        <a href="https://forms.gle/uYa4pdKK6STRsUgHA" class="google-form-button" target="_blank">Sign Up / Contact Me</a>
+    </div>
+    
+    
+
+    <footer class="footer">
+        <p>&copy; 2024 Mridul Jhawar. All Rights Reserved.</p>
+    </footer>
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <div class="modal-content-wrapper" onclick="event.stopPropagation();">
+            <span class="close">&times;</span>
+            <img class="modal-content" id="img01">
+            <div id="caption" class="caption"></div>
+            <!-- Navigation Arrows -->
+            <a class="prev">&#10094;</a>
+            <a class="next">&#10095;</a>
+        </div>
+    </div>
+
+
+    <script src="javascript_files/usc_grad.js"></script>
+</body>
+</html>

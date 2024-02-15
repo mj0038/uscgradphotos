@@ -1,44 +1,74 @@
-function resizeImage() {
-    // Select all images within slides
-    const images = document.querySelectorAll('.landscape-slide img'); // Adjust the selector as needed
+let slideIndex = 0;
+let photoSlideIndex = 0;
+let videoSlideIndex = 0; // New index for video slides
 
-    images.forEach(image => {
-        const viewportHeight = window.innerHeight;
-        const viewportWidth = window.innerWidth - 20; // Subtracting 20px for the 10px boundary on each side
-        const maxImageHeight = viewportHeight * 0.98; // 98% of the viewport height to consider any fixed header/footer
-
-        // Adjust the image's max height based on the viewport
-        image.style.maxHeight = `${maxImageHeight}px`;
-        image.style.width = 'auto'; // Reset width to maintain aspect ratio
-
-        // Adjust width or other properties based on your needs
-        const imgRatio = image.naturalWidth / image.naturalHeight;
-        const viewportRatio = viewportWidth / viewportHeight;
-
-        if (imgRatio > viewportRatio) {
-            // If the image ratio is greater than viewport ratio, adjust width to maintain aspect ratio
-            image.style.width = `${viewportWidth}px`;
-            image.style.height = 'auto';
-        }
-    });
+function toggleShape() {
+    const shape = document.getElementById("dynamicShape");
+    shape.className = 'shape'; // Reset to base class
+    shape.classList.add(slideIndex % 2 === 0 ? "circle" : "square");
 }
 
-// Adjusted to apply the resizeImage function to each image in the slideshow
-function showSlides() {
-    let slides = document.getElementsByClassName("landscape-slide");
+function changeSlides(slides, index) {
     for (let i = 0; i < slides.length; i++) {
-        slides[i].style.display = "none";  
+        slides[i].style.display = "none";
     }
-    slideIndex++;
-    if (slideIndex > slides.length) {slideIndex = 1}    
-    slides[slideIndex-1].style.display = "block";  
-    setTimeout(showSlides, 4000); // Change image every 4 seconds
-    resizeImage(); // Ensure images are resized according to the new slide
+    index++;
+    if (index > slides.length) { index = 1; }
+    slides[index - 1].style.display = "block";
+    return index; // Return updated index
 }
 
-// Call resizeImage on window resize and initial load
-window.addEventListener('load', function() {
-    showSlides();
-    resizeImage();
+function showSlides() {
+    const slides = document.getElementsByClassName("slide");
+    slideIndex = changeSlides(slides, slideIndex);
+    toggleShape(); // Update shape based on current slideIndex
+    setTimeout(showSlides, 4000);
+}
+
+function showPhotoSlides() {
+    const photoSlides = document.getElementsByClassName("photo-slides");
+    photoSlideIndex = changeSlides(photoSlides, photoSlideIndex);
+    setTimeout(showPhotoSlides, 4000);
+}
+
+
+// Initialize all slideshows
+showSlides();
+showPhotoSlides();
+
+
+// Modal functionality
+var modal = document.getElementById("myModal");
+var modalImg = document.getElementById("img01");
+var captionText = document.getElementById("caption");
+
+// Adding event listeners to all images including the extra photos
+document.querySelectorAll('.slide, .photo-slides img, .extra-photo img').forEach(function(img) {
+    img.onclick = function() {
+        modal.style.display = "block";
+        modalImg.src = this.src; // Set the src of the modal image to the clicked image's src
+        captionText.innerHTML = this.getAttribute("data-caption") || this.alt; // Use data-caption or alt text as the caption
+    };
 });
-window.addEventListener('resize', resizeImage);
+
+
+// Close the modal when the user clicks on <span> (x)
+document.getElementsByClassName("close")[0].onclick = function() {
+    modal.style.display = "none";
+    var videoElements = modal.getElementsByTagName("video");
+    for (var i = 0; i < videoElements.length; i++) {
+        videoElements[i].pause(); // Pause video when closing modal
+    }
+};
+
+
+// Close the modal if the user clicks outside the image/video
+window.onclick = function(event) {
+    if (event.target == modal) {
+        modal.style.display = "none";
+        var videoElements = modal.getElementsByTagName("video");
+        for (var i = 0; i < videoElements.length; i++) {
+            videoElements[i].pause(); // Pause video when closing modal
+        }
+    }
+};

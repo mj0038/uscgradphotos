@@ -1,0 +1,298 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #333;
+    padding-top: 20px; /* Space for fixed navbar, ensuring content doesn't hide behind it */
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: darkred;
+    color: white;
+    padding: 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    padding: 0;
+    margin: 0;
+    justify-content: space-between;
+}
+
+.navbar li {
+    margin-right: 20px;
+}
+
+.navbar li:last-child {
+    margin-right: 0;
+}
+
+.navbar a {
+    color: rgb(221, 162, 12);
+    text-decoration: none;
+    padding: 5px 5px;
+}
+
+.content-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.portfolio-intro, .portfolio-intro h1, .portfolio-intro p {
+    text-align: center;
+    color: white;
+}
+
+/* Adjusting the portfolio-intro for a better background and spacing */
+.portfolio-intro {
+    padding: 20px 20px;
+    background: rgba(51, 51, 51, 0.8);
+    backdrop-filter: blur(10px);
+}/* Content Container */
+.content-container {
+    width: 90%; /* Adjust as needed */
+    max-width: 1200px; /* Or your desired max width */
+    margin: 20px auto; /* Centering the container */
+    overflow: hidden; /* In case of overflow */
+}
+
+/* Portfolio Slideshow */
+.portfolio-slideshow {
+    margin-bottom: 20px; /* Space between the slideshow and the horizontal box */
+}
+
+.horizontal-container {
+    display: flex; /* Flexbox layout */
+    justify-content: space-between; /* Space between the vertical boxes */
+    margin-bottom: 20px; /* Space between this section and the next */
+}
+
+.vertical-box {
+    flex: 1; /* Each box takes equal width */
+    margin: 0 10px; /* Space between the boxes */
+}
+
+.vertical-slide {
+    display: none; /* Initially hidden */
+}
+
+.vertical-slide img {
+    width: 100%; /* Full width of its container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area nicely */
+}
+
+.additional-photos {
+    margin-top: 20px; /* Space between the horizontal box and additional photos */
+}
+
+/* Modal and other existing styles */
+
+.additional-photos, .portfolio-slideshow {
+    margin: 20px auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
+}
+.photo-container {
+    display: flex; /* Use flexbox to manage layout */
+    justify-content: center; /* Center children horizontally */
+    align-items: center; /* Center children vertically */
+    overflow: hidden; /* Prevent overflow */
+    width: 100%; /* Adjust width to account for margins */
+    max-width: 1200px; /* Example max-width, adjust as needed */
+    height: auto;
+}
+
+
+.additional-photo {
+    width: 100%; /* Full width to match the parent container */
+    display: none; /* Hide initially; shown via JS */
+}
+
+.additional-photo img {
+    width: 100%; /* Ensure image fills the container */
+    height: auto; /* Maintain aspect ratio */
+    object-fit: cover; /* Cover the area of the container without distortion */
+}
+
+
+.additional-photo, .portfolio-slide {
+    display: none; /* Initially hide all slides */
+    width: 100%;
+}
+.photo-container, .additional-photo img {
+    padding: 0;
+    margin: 0;
+}
+/* Showing the first slide by default in CSS might not be necessary if JS handles it */
+.additional-photo img, .portfolio-slide img {
+    width: 100%;
+    height: auto;
+    object-fit: cover; /* Ensures images cover their area without distortion */
+    cursor: pointer; /* Indicates the images can be interacted with */
+}
+
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0,0,0,0.9);
+}
+
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 25px;
+    color: #f1f1f1;
+    font-size: 35px;
+    transition: 0.3s;
+}
+
+.close:hover, .close:focus {
+    color: #bbb;
+    cursor: pointer;
+}
+
+.pricing-signup-section {
+    text-align: center;
+    padding: 20px;
+    background-color: hsl(0, 0%, 94%); /* Light grey background */
+    margin: 20px auto;
+}
+/* Overall Pricing Table Styling */
+.pricing-table {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    gap: 20px;
+    padding: 20px 0;
+}
+
+/* Individual Pricing Package Enhancements */
+.pricing-package {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+    background-color: #ffffff;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+    overflow: hidden; /* Ensures that children elements (like a gradient background) are contained within the border-radius */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+}
+
+/* Hover Effect for Pricing Package */
+.pricing-package:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.2);
+}
+
+/* Package Title with Gradient Background */
+.pricing-package h3 {
+    margin: 0;
+    padding: 20px 15px;
+    background: linear-gradient(135deg, #dcb827, #b7310c); /* Example gradient - adjust colors as needed */
+    color: #ffffff;
+    text-align: center;
+    font-size: 24px;
+}
+
+/* Pricing Details */
+.pricing-package p {
+    padding: 0 15px;
+    text-align: center;
+    font-size: 18px;
+    color: #333;
+}
+
+/* List Styling */
+.pricing-package ul {
+    list-style: none;
+    padding: 15px;
+    margin: 0;
+}
+
+.pricing-package ul li {
+    padding: 10px;
+    border-bottom: 1px solid #eee; /* Subtle separator for list items */
+    color: #666;
+    text-align: center;
+}
+
+/* Removes border from the last item for a cleaner look */
+.pricing-package ul li:last-child {
+    border-bottom: none;
+}
+.connect-call-to-action{
+    color: #0056b3;
+    text-align: center;
+    font-weight: bold;
+    font-size: 30px;
+}
+
+/* Sign Up/Contact Us Button Styling */
+.google-form-button {
+    display: block;
+    width: 80%;
+    margin: 20px auto 30px auto;
+    padding: 10px 0;
+    background-color: darkgoldenrod;
+    color: #ffffff;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 25px;
+    font-weight: bold;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.google-form-button:hover {
+    background-color: white;
+    color: #b7310c;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+
+.footer {
+    background-color: darkred;
+    color: rgb(221, 162, 12);
+    text-align: center;
+    padding: 10px 0;
+    width: 100%;
+}
+
+/* Simplified media queries for responsive design adjustments */
+@media (max-width: 1024px) {
+    .category { flex-basis: calc(50% - 20px); }
+}
+
+@media (max-width: 768px) {
+    .navbar { padding: 20px; }
+    .portfolio-slide img, .additional-photo { object-fit: scale-down; }
+    .category { flex-basis: calc(100% - 20px); }
+    .content-container, .navbar { padding: 0 10px; }
+    .pricing-package {
+        max-width: 100%; /* Allows packages to take full width on smaller screens */
+    }
+}

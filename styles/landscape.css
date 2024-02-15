@@ -1,9 +1,18 @@
+/* Reset default browser styles */
 body, html {
     margin: 0;
     padding: 0;
-    padding-top: 20px; /* Space for fixed navbar */
     font-family: Arial, sans-serif;
-    background-color: #333;
+    padding-top: 10px; /* Space for fixed navbar */
+}
+
+#background-video {
+    position: fixed;
+    right: 0;
+    bottom: 0;
+    min-width: 100%; 
+    min-height: 100%;
+    z-index: -100; /* Ensure the video stays in the background */
 }
 
 /* Navigation bar styling */
@@ -11,7 +20,7 @@ body, html {
     display: flex;
     justify-content: space-between; 
     align-items: center;
-    background-color: darkred;
+    background-color: black;
     color: white;
     padding: 20px; /* Adjusted padding for smaller fixed value */
     position: fixed;
@@ -19,6 +28,7 @@ body, html {
     left: 0;
     width: 100%;
     z-index: 1000;
+    margin-bottom: 100px;
 }
 
 .navbar ul {
@@ -38,15 +48,77 @@ body, html {
 }
 
 .navbar a {
-    color: rgb(221, 162, 12);
+    color: white;
     text-decoration: none;
     padding: 5px 5px;
+}
+/* Content container styling */
+.content-container {
+    margin-top: 120px; /* Height of navbar */
+    padding-top: 0; /* No additional padding needed */
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    margin-left: 25px;
+    margin-right: 25px;
+    margin-bottom: 25px;
+}
+
+/* About section styling */
+.about-section {
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Vertically centers the text */
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.combined-content {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    width: 85%;
+    max-width: 1200px;
+    margin: auto;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    background: rgb(175, 154, 133);
+    padding: 20px;
+    border-radius: 15px;
+    margin-top: calc(50px + 5vh);
+}
+
+.text-content {
+    flex: 3; /* Takes up more space than the image */
+    text-align: center; /* Center text horizontally */
+}
+
+.slideshow-container {
+    flex: 2; /* Takes up less space than text-content */
+    display: flex; /* Align items in a flex container */
+    justify-content: center; /* Center slideshow images horizontally */
+    align-items: center; /* Center slideshow images vertically */
+    position: relative; /* Position relative to allow absolute positioning inside */
+}
+
+.slide {
+    max-width: 100%; /* Set maximum width */
+    height: auto; /* Maintain aspect ratio */
+    display: none; /* Hide all slides by default */
+    border-radius: 15px;
+
+}
+
+/* Class to be added by JavaScript to make the slide visible */
+.active-slide {
+    display: block; /* Only the active slide is displayed */
 }
 
 /* Footer styling */
 .footer {
-    background-color: darkred;
-    color: rgb(221, 162, 12);
+    background-color: black;
+    color: white;
     text-align: center;
     padding: 10px 0;
     position: relative;
@@ -57,19 +129,139 @@ body, html {
     margin: 0;
     border: 0;
 }
+.photos-slideshow {
+    width: 100%;
+    max-height: 1000px;
+    margin: auto;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 50px;
+    margin-top: 50px; /* Space from the above section */
+    object-fit: contain;
+}
+
+.photo-slides {
+    display: none; /* Hide all slides by default */
+    width: 100%; /* Full width */
+    height: auto; /* Maintain aspect ratio */
+}
+
+.photo-slides img {
+    width: 100%; /* Make image full width of the slide */
+    display:block;
+    height: auto; /* Maintain aspect ratio */
+}
+.extra-photos-row {
+    display: flex;
+    justify-content: space-between; /* Adjust spacing between photo containers */
+    padding: 0 20px; /* 20px space on the sides */
+    box-sizing: border-box;
+    margin-top: 40px;
+}
+
+.extra-photo {
+    width: calc(33.333% - 13.333px); /* Adjust width to account for 3 items in a row and padding */
+    display: flex;
+    justify-content: center; /* Center the image horizontally */
+    align-items: center; /* Center the image vertically */
+    overflow: hidden; /* Hide parts of the image that exceed the container size */
+}
+
+.extra-photo img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+
+/* Modal styling for zoomed image */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1001; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.9); /* Black w/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+    width: 50%;
+    max-width: 700px;
+    max-height: 90%; /* Prevents tall images from going off-screen */
+}
+/* Caption of Modal Image */
+.caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+/* Style the close button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+/* Ensure cursor changes to pointer for clickable images */
+.slide, .photo-slides img, .extra-photo {
+    cursor: pointer;
+}
+
+/* Also ensure the close button changes the cursor to pointer */
+.close {
+    cursor: pointer;
+}
+
+
+/* Media Queries */
 @media (max-width: 768px) {
     .navbar {
-        padding: 20px; /* Adjust padding for mobile */
+        padding: 20px 2%; /* Reduce padding on smaller screens */
+    }
+    
+    .navbar ul {
+        justify-content: center; /* Keep the navbar items in one row on smaller screens */
+    }
+    
+    .navbar a {
+        padding: 15px 10px; /* Adjust padding for better tap targets on mobile */
+    }
+    
+    .content-container {
+        margin-top: 60px; /* Adjust top margin to account for smaller navbar */
+    }
+    
+    .combined-content {
+        flex-direction: column; /* Stack text and images on smaller screens */
+        align-items: center; /* Center align the stacked items */
+        margin-top: 20px;
+    }
+    
+    .text-content, .slideshow-container {
+        flex-basis: 100%; /* Allow each to take full width */
     }
 }
-
-/* Fading animation */
-@keyframes fade {
-    from {opacity: .4} 
-    to {opacity: 1}
-}
-
-/* Responsive settings for the slideshow might be needed depending on your layout */
-@media screen and (max-width: 768px) {
-    .prev, .next {font-size: 11px;}
-}
+    

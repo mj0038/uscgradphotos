@@ -28,6 +28,7 @@ body, html {
     left: 0;
     width: 100%;
     z-index: 1000;
+
 }
 
 .navbar ul {
@@ -78,13 +79,14 @@ body, html {
     justify-content: space-around;
     align-items: center; /* Aligns text-content and slideshow-container vertically */
     flex-wrap: wrap;
-    width: 85%;
+    width: 95%;
     max-width: 1200px;
     margin: auto;
     box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     background:rgb(247, 203, 91);
     padding: 20px;
     border-radius: 15px;
+    margin-top: 20px;
 }
 
 .text-content {

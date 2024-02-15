@@ -3,11 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Landscape Portfolio</title>
+    <title>About Me</title>
     <link rel="stylesheet" href="styles/landscape.css">
     <link rel="stylesheet" href="styles/general.css">
 </head>
 <body>
+    <video autoplay muted loop id="background-video">
+        <source src="photos/IMG_1544.MOV" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+  
     <header class="navbar">
         <nav>
             <ul>
@@ -18,38 +23,65 @@
             </ul>
         </nav>
     </header>
+
     <div class="content-container">
-        <div class="landscap-slideshow">
-            <div class="landscape-slide fade">
-                <img src="photos/landscape/landscape1.JPG" alt="Photo 1">
+        <div class="about-section">
+            <div class="combined-content">
+                <div class="text-content">
+                    <h1>Nature is the source of all true knowledge - Leonardo da Vinci</h1>
+                    <p>An amalgamtion of serenity through my lens</p>
+                    
+                </div>
+                <div class="slideshow-container">
+                    <!-- Slideshow images -->
+                    <img src="photos/landscape/landscape1.JPG" alt="Landscape 1" class="slide">
+                    <img src="photos/landscape/landscape4.jpg" alt="Landscape 2" class="slide">
+                    <img src="photos/landscape/landscape10.JPG" alt="Landscape 4 4" class="slide">
+                </div>
+                <div id="dynamicShape" class="shape"></div> 
             </div>
-            <div class="landscape-slide fade">
-                <img src="photos/landscape/landscape2.jpg" alt="Photo 2">
-            </div>
-            <div class="landscape-slide fade">
-                <img src="photos/landscape/landscape3.jpg" alt="Photo 3">
-            </div>
-
         </div>
-
     </div>
+    <div class="extra-photos-row">
+        <div class="extra-photo">
+            <img src="photos/landscape/landscape5.jpg" alt="Image 1">
+        </div>
+        <div class="extra-photo">
+            <img src="photos/landscape/landscape6.jpg" alt="Image 2">
+        </div>
+        <div class="extra-photo">
+            <img src="photos/landscape/landscape7.jpg" alt="Image 3">
+        </div>
+    </div>
+
+    <div class ='photos-slideshow'>
+        <div class="photo-slides fade">
+            <img src="photos/landscape/landscape2.jpg" alt="Photo 1">
+        </div>
+        <div class="photo-slides fade">
+            <img src="photos/landscape/landscape16.jpg" alt="Photo 2">
+        </div>
+        <div class="photo-slides fade">
+            <img src="photos/landscape/landscape17.jpg" alt="Photo 3">
+        </div>
+        <div class="photo-slides fade">
+            <img src="photos/landscape/landscape3.jpg" alt="Photo 3">
+        </div>
+    </div>
+
+
+
+    <!-- The Modal -->
+    <div id="myModal" class="modal">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="img01">
+        <div id="caption" class="caption"></div>
+    </div>
+
 
     <footer class="footer">
         <p>&copy; 2024 Mridul Jhawar. All Rights Reserved.</p>
     </footer>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal Content Wrapper -->
-        <div class="modal-content-wrapper" onclick="event.stopPropagation();">
-            <!-- The Close Button -->
-            <span class="close">&times;</span>
-            <!-- Modal Content (The Image) -->
-            <img class="modal-content" id="img01">
-            <!-- Modal Caption (Image Title) -->
-            <div id="caption"></div>
-        </div>
-    </div>
 
     <script src="javascript_files/landscape.js"></script>
 </body>
